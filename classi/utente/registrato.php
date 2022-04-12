@@ -1,13 +1,17 @@
 <?php
 
-require __DIR__ . '../utente.php';
+require __DIR__ . '/../utente.php';
 class Registrato extends Utente
 {
-  protected $loggato;
+  protected $loggato = true;
+  public $password;
 
-  public function __construct($name, $surname, $email, $address, $loggato)
+  public function __construct($name, $surname, $email, $address, $password)
   {
     parent::__construct($name, $surname, $email, $address);
-    $this->loggato = $loggato;
+    if ($password != "") {
+
+      //se l'utente inserisce una password qualsiasi, conta come registrato  
+      $this->loggato = true;    }
   }
 }

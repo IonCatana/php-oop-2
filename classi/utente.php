@@ -24,8 +24,6 @@ class Utente
       $this->name = $nome;
       $this->surname = $cognome;
       return true;
-    } else {
-      return false;
     }
   }
 
@@ -35,8 +33,6 @@ class Utente
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $this->$email = $email;
       return true;
-    } else {
-      return false;
     }
   }
 
@@ -48,8 +44,6 @@ class Utente
     if (str_word_count($address) > 1 && preg_match('~[0-9]+~', $address) == 1) {
       $this->address = $address;
       return true;
-    } else {
-      return false;
     }
   }
 
@@ -61,8 +55,6 @@ class Utente
 
       $this->telephone = $phoneNumber;
       return true;
-    } else {
-      return false;
     }
   }
 }

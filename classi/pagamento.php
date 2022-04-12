@@ -21,8 +21,6 @@ class Pagamento
     if (preg_match('^[0-9]{16}+$', $numeroCarta) == 1) {
       $this->numeroCarta = $numeroCarta;
       return true;
-    } else {
-      false;
     }
   }
 
@@ -44,11 +42,7 @@ class Pagamento
       //li confronto
       if ($expire < $today) {
         return true;
-      } else {
-        return false;
       }
-    } else {
-      return false;
     }
   }
 
@@ -60,8 +54,6 @@ class Pagamento
       $this->nome = $nome;
       $this->cognome = $cognome;
       return true;
-    } else {
-      return false;
     }
   }
 
@@ -72,8 +64,8 @@ class Pagamento
 
       $this->cifreValidazione = $numeroPin;
       return true;
-    } else {
-      return false;
     }
   }
 }
+
+
