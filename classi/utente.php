@@ -7,6 +7,7 @@ class Utente
   protected $email;
   protected $address;
   protected $telephone;
+  public $sconto = 0;
 
   //richiedo obbligatoriamente nome, cognome, indirizzo mail e indirizzo per la spedizione
   public function __construct($name, $surname, $email, $address)
@@ -14,7 +15,7 @@ class Utente
     $this->name = $name;
     $this->surname = $surname;
     $this->email = $email;
-    $this->address = $address;
+    $this->address = $address;    
   }
 
   //il nome e il cognome non deve essere numerici piú corti di 2 caratteri

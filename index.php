@@ -4,8 +4,10 @@ require_once __DIR__ . '/classi/prodotti/cibi.php';
 require_once __DIR__ . '/classi/utente/registrato.php';
 require_once __DIR__ . '/classi/pagamento.php';
 
+//Utente
 $utente1 = new Registrato("Nome non valido", "Cognome non valido", "E-mail non valida", "Indirizzo non valido", "IonCatana");
 
+//Copntrollo se tutti i valori ritornano True, in caso di False mostro un errore
 if ($utente1->setNameSurname("Ion", "Catana")) {
   echo "Nome e cognome corretti <br>";
 } else {
@@ -30,4 +32,25 @@ if ($utente1->setTelephone("3554089011")) {
   echo "Numero di telefono non valido <br>";
 }
 
+//Se l'utente é loggato allora ha dirito a uno sconto del 20%
+if ($utente1->loggato) {
+  $utente1->sconto = 20;
+  echo "Hai uno sconto del 20%";
+}
+
 var_dump($utente1);
+
+//Pagamento
+$pagamentoUtente1 = new Pagamento();
+
+//Se tutti i valori ritornano True allora il pagamento é andato a buon fine
+if (
+  $pagamentoUtente1->setNumeroCarta("0112642347399321") &&
+  $pagamentoUtente1->setData("17-03-2024") &&
+  $pagamentoUtente1->setNomeCognome("Ion", "Catana") &&
+  $pagamentoUtente1->setValidazione("444")
+) {
+  echo "Pagamento é andato a buon fine";
+} else {
+  echo "Pagamento rifiutato";
+}

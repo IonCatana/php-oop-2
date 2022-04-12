@@ -3,7 +3,7 @@
 require __DIR__ . '/../utente.php';
 class Registrato extends Utente
 {
-  protected $loggato = true;
+  public $loggato = true;
   public $password;
 
   public function __construct($name, $surname, $email, $address, $password)
