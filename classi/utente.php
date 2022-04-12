@@ -8,8 +8,8 @@ class Utente
   protected $address;
   protected $telephone;
 
-  //richiedo obbligatoriamente nome, cognome, inditizzo mail e indirizzo per la spedizione
-  public function __construct($name, $surname, $email, $address, $telephone = "Numero non fornito")
+  //richiedo obbligatoriamente nome, cognome, indirizzo mail e indirizzo per la spedizione
+  public function __construct($name, $surname, $email, $address)
   {
     $this->name = $name;
     $this->surname = $surname;
