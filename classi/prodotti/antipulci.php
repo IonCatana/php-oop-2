@@ -8,7 +8,7 @@ class Antipulci extends Prodotti
   public $animale;
   public $mesiDisponibili = ["maggio", "giugno", "luglio", "agosto"];
   protected $meseAttuale;
-  public $disponibile = false;
+  public $disponibile = true;
 
   //chiedo di verificare se il mese in cui viene acquistato il prodotto è presente tra i mesi disponibili
   //se si' , allora imposto la disponibilità su TRUE
@@ -16,7 +16,7 @@ class Antipulci extends Prodotti
   {
     if (in_array(strtolower($meseAttuale), $this->mesiDisponibili)) {
 
-      $this->disponibile = true;
+      $this->disponibile = false;
     }
   }
 }
