@@ -60,7 +60,7 @@ class Pagamento
   public function setValidazione($numeroPin)
   {
     //l'utente deve inserire solo 3 numeri del retro della carta
-    if (preg_match('^[0-9]{3}+$', $numeroPin) == 1) {
+    if (preg_match('~^[0-9]{3}+$~', $numeroPin) == 1) {
 
       $this->cifreValidazione = $numeroPin;
       return true;
